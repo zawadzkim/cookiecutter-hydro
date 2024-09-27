@@ -21,11 +21,7 @@ check: ## Run code quality tools.
 .PHONY: test
 test: ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
-{%- if cookiecutter.codecov == "y"%}
-	@poetry run pytest --cov --cov-config=pyproject.toml --cov-report=xml
-{%- else %}
 	@poetry run pytest --doctest-modules
-{%- endif%}
 
 .PHONY: build
 build: clean-build ## Build wheel file using poetry
@@ -35,44 +31,6 @@ build: clean-build ## Build wheel file using poetry
 .PHONY: clean-build
 clean-build: ## clean build artifacts
 	@rm -rf dist
-
-{%- if cookiecutter.publish_to == "pypi"%}
-
-.PHONY: publish
-publish: ## publish a release to pypi.
-	@echo "🚀 Publishing: Dry run."
-	@poetry config pypi-token.pypi $(PYPI_TOKEN)
-	@poetry publish --dry-run
-	@echo "🚀 Publishing."
-	@poetry publish
-
-.PHONY: build-and-publish
-build-and-publish: build publish ## Build and publish.
-{%- elif cookiecutter.publish_to == "artifactory" %}
-
-.PHONY: publish
-publish: ## Publish to the Artifactory repository using poetry. Requires ARTIFACTORY_TOKEN to be set.
-	@echo "🚀 Publishing: Dry run."
-	@poetry config repositories.artifactory $(ARTIFACTORY_URL)
-	@poetry publish --repository artifactory --username $(ARTIFACTORY_USERNAME) --password $(ARTIFACTORY_PASSWORD) --dry-run
-	@echo "🚀 Publishing."
-	@poetry publish --repository artifactory --username $(ARTIFACTORY_USERNAME) --password $(ARTIFACTORY_PASSWORD)
-
-.PHONY: build-and-publish
-build-and-publish: build publish ## Build and publish.
-{%- endif%}
-
-{%- if cookiecutter.mkdocs == "y" %}
-
-.PHONY: docs-test
-docs-test: ## Test if documentation can be built without warnings or errors
-	@poetry run mkdocs build -s
-
-.PHONY: docs
-docs: ## Build and serve the documentation
-	@poetry run mkdocs serve
-
-{%- endif %}
 
 .PHONY: help
 help:

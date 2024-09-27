@@ -15,16 +15,12 @@
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/cookiecutter-poetry)](https://pypi.org/project/cookiecutter-poetry/)
 [![License](https://img.shields.io/github/license/fpgmaas/cookiecutter-poetry)](https://img.shields.io/github/license/fpgmaas/cookiecutter-poetry)
 
-This is a modern Cookiecutter template that can be used to initiate a Python project with all the necessary tools for development, testing, and deployment. It supports the following features:
+This cookiecutter template is based on [Cookiecutter Poetry](https://github.com/fpgmaas/cookiecutter-poetry-example) but is tailored for use in hydrological research.
 
 - [Poetry](https://python-poetry.org/) for dependency management
-- CI/CD with [GitHub Actions](https://github.com/features/actions)
+- [GitHub Actions](https://github.com/features/actions) for quality control
 - Pre-commit hooks with [pre-commit](https://pre-commit.com/)
 - Code quality with [ruff](https://github.com/charliermarsh/ruff), [mypy](https://mypy.readthedocs.io/en/stable/), [deptry](https://github.com/fpgmaas/deptry/) and [prettier](https://prettier.io/)
-- Publishing to [PyPI](https://pypi.org) or [Artifactory](https://jfrog.com/artifactory) by creating a new release on GitHub
-- Testing and coverage with [pytest](https://docs.pytest.org/en/7.1.x/) and [codecov](https://about.codecov.io/)
-- Documentation with [MkDocs](https://www.mkdocs.org/)
-- Compatibility testing for multiple versions of Python with [Tox](https://tox.wiki/en/latest/)
 - Containerization with [Docker](https://www.docker.com/)
 - Development environment with [VSCode devcontainers](https://code.visualstudio.com/docs/devcontainers/containers)
 
