@@ -12,6 +12,16 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.11"
+{% if cookiecutter.model == 'flopy' -%}
+flopy = "^3.8"
+{% elif cookiecutter.model == 'swap' -%}
+pyswap = "*"
+{% elif cookiecutter.model == 'pastas' -%}
+pastas = "^1.7"
+{% endif -%}
+{% if cookiecutter.gensor == 'y' -%}
+gensor = "*"
+{% endif -%}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"

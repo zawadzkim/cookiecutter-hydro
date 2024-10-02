@@ -18,4 +18,4 @@ RUN poetry install --no-interaction --no-ansi --no-root --no-dev
 # Copy Python code to the Docker image
 COPY {{cookiecutter.project_slug}} /code/{{cookiecutter.project_slug}}/
 
-CMD [ "python", "{{cookiecutter.project_slug}}/foo.py"]
+CMD [ "python", "{{cookiecutter.project_slug}}/src/foo.py"]

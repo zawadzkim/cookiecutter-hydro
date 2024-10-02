@@ -41,29 +41,10 @@ A short description of your project.
 workflows to setup the environment and run code formatting checks
 and unittests.
 
-**publish_to**
-
-`"pypi"`, `"artifactory"`, or `"none"`. Adds functionality to the
-`Makefile` and Github workflows to make publishing your code as
-simple as creating a new release release on Github. For more info,
-see
-[Publishing to PyPI or Artifactory](./features/publishing.md).
-
 **deptry**
 
 `"y"` or `"n"`. Adds [deptry](https://fpgmaas.github.io/deptry/)
 to the development dependencies of the project, and adds it to the `make check` command. `deptry` is a command line tool to check for issues with dependencies in a Python project, such as obsolete or missing dependencies.
-
-**mkdocs**
-
-`"y"` or `"n"`. Adds [MkDocs](https://www.mkdocs.org/)
-documentation to your project. This includes automatically parsing
-your docstrings and adding them to the documentation. Documentation
-will be deployed to the `gh-pages` branch.
-
-**codecov**
-
-`"y"` or `"n"`. Adds code coverage checks with [codecov](https://about.codecov.io/).
 
 **dockerfile**
 
