@@ -1,9 +1,3 @@
-<p align="center">
-  <img width="600" src="https://raw.githubusercontent.com/zawadzkim/cookiecutter-hydro/main/docs/static/cookiecutter.svg">
-</p style = "margin-bottom: 2rem;">
-
----
-
 [![Release](https://img.shields.io/github/v/release/zawadzkim/cookiecutter-hydro)](https://pypi.org/project/cookiecutter-hydro/)
 [![Build status](https://img.shields.io/github/actions/workflow/status/zawadzkim/cookiecutter-hydro/main.yml?branch=main)](https://github.com/zawadzkim/cookiecutter-hydro/actions/workflows/main.yml?query=branch%3Amain)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/cookiecutter-hydro)](https://pypi.org/project/cookiecutter-hydro/)
