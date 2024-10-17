@@ -19,6 +19,17 @@ if __name__ == "__main__":
     if "{{cookiecutter.include_github_actions}}" != "y":
         remove_dir(".github")
 
+    if "{{cookiecutter.model}}" != "flopy":
+        remove_dir("{{cookiecutter.project_slug}}/src/modflow")
+        remove_dir("{{cookiecutter.project_slug}}/data/layers")
+        remove_dir("{{cookiecutter.project_slug}}/data/boundaries")
+
+    if "{{cookiecutter.model}}" != "swap":
+        remove_dir("{{cookiecutter.project_slug}}/src/swap")
+
+    if "{{cookiecutter.model}}" != "pastas":
+        remove_dir("{{cookiecutter.project_slug}}/src/pastas")
+
     if "{{cookiecutter.dockerfile}}" != "y":
         remove_file("Dockerfile")
 

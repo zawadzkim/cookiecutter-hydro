@@ -9,6 +9,8 @@
     "deptry": ["y", "n"],
     "dockerfile": ["y", "n"],
     "devcontainer": ["y", "n"],
+    "model": ["flopy", "swap", "pastas", "None"],
+    "gensor": ["y", "n"],
     "open_source_license": [
         "MIT license",
         "BSD license",
