@@ -18,7 +18,7 @@ cchydro
 ```
 
 For an explanation of the prompt arguments which you will need to answer, see
-[Prompt Arguments](../prompt_arguments).
+[Prompt Arguments](./prompt_arguments.md).
 
 After this step, you will have the structure of your project ready.
 

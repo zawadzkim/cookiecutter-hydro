@@ -21,7 +21,7 @@ create a project directory, and run the following two commands:
 
 ```bash
 pip install cookiecutter-hydro
-ccp
+cchydro
 ```
 
 Alternatively, install `cookiecutter` and directly pass the URL to this
@@ -54,4 +54,4 @@ You are now ready to start development on your project!
 
 ## Acknowledgements
 
-This project is a fork of [Cookiecutter Poetry](https://github.com/fpgmaas/cookiecutter-poetry-example) but is tailored for use in hydrological research.
+This project is a fork of [Cookiecutter Poetry](https://github.com/fpgmaas/cookiecutter-poetry-example) and is partly inspired by [Cookiecutter Data Science](https://github.com/drivendataorg/cookiecutter-data-science) project, but is tailored for use in hydrological research.
