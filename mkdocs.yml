@@ -1,11 +1,11 @@
-site_name: cookiecutter-poetry
-repo_url: https://github.com/fpgmaas/cookiecutter-poetry
-site_url: https://fpgmaas.github.io/cookiecutter-poetry
-site_description: A cookiecutter template for Python projects that use Poetry for its dependency management
-site_author: Florian Maas
+site_name: cookiecutter-hydro
+repo_url: https://github.com/zawadzkim/cookiecutter-hydro
+site_url: https://zawadzkim.github.io/cookiecutter-hydro
+site_description: A cookiecutter template for structuring hydrological modelling projects using Python with Poetry as dependency management tool.
+site_author: Mateusz Zawadzki
 edit_uri: edit/main/docs/
-repo_name: fpgmaas/cookiecutter-poetry
-copyright: Maintained by <a href="https://fpgmaas.com">Florian</a>.
+repo_name: zawadzkim/cookiecutter-hydro
+copyright: Maintained by <a href="https://zawadzkim.com">Mateusz</a>.
 
 nav:
   - Home: index.md
@@ -28,15 +28,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: white
-      accent: deep orange
+      primary: teal
+      accent: purple
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
-      accent: deep orange
+      primary: teal
+      accent: lime
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -49,7 +49,9 @@ extra:
       link: https://github.com/zawadzkim/cookiecutter-hydro
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/cookiecutter-hydro/
+
 markdown_extensions:
+  - admonition
   - toc:
       permalink: true
   - pymdownx.arithmatex:
