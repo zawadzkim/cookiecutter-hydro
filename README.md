@@ -30,6 +30,7 @@ Github repository to the `cookiecutter` command:
 pip install cookiecutter
 cookiecutter https://github.com/zawadzkim/cookiecutter-hydro.git
 ```
+You will be prompted to answer several questions which will allow to set up your project directories. 
 
 Create a repository on GitHub, and then run the following commands, replacing `<project-name>`, with the name that you gave the Github repository and
 `<github_author_handle>` with your Github username.
