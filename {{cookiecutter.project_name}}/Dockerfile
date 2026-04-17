@@ -1,21 +1,25 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3.9-slim-buster
+FROM python:3.11-slim
 
-ENV POETRY_VERSION=1.4 \
-    POETRY_VIRTUALENVS_CREATE=false
+ENV PATH="/root/.pixi/bin:${PATH}"
 
-# Install poetry
-RUN pip install "poetry==$POETRY_VERSION"
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy only requirements to cache them in docker layer
-WORKDIR /code
-COPY poetry.lock pyproject.toml /code/
+# Install pixi
+RUN curl -fsSL https://pixi.sh/install.sh | bash
+
+# Install dependencies into a runner manifest baked in the image.
+WORKDIR /opt/runner
+COPY pixi.toml /opt/runner/
 
 # Project initialization:
-RUN poetry install --no-interaction --no-ansi --no-root --no-dev
+RUN pixi install
 
-# Copy Python code to the Docker image
-COPY {{cookiecutter.project_slug}} /code/{{cookiecutter.project_slug}}/
+# Project files are mounted at runtime via a host volume.
+WORKDIR /workspace
+VOLUME ["/workspace"]
 
-CMD [ "python", "{{cookiecutter.project_slug}}/src/foo.py"]
+CMD ["pixi", "run", "--manifest-path", "/opt/runner/pixi.toml", "python", "src/foo.py"]

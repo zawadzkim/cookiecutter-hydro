@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import os
+import subprocess
 
 
-def main() -> None:
+def main() -> int:
     cwd = os.path.dirname(__file__)
     package_dir = os.path.abspath(os.path.join(cwd, ".."))
-    os.system(f"cookiecutter {package_dir}")  # noqa: S605 | No injection, retrieving path in OS
+    return subprocess.call(["cookiecutter", package_dir])

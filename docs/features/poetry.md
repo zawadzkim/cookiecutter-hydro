@@ -1,21 +1,21 @@
-# Dependency management with Poetry
+# Dependency Management
 
-The generated repository will uses [Poetry](https://python-Poetry.org/)
-for its dependency management. When you have created your repository
-using this cookiecutter template, a Poetry environment is pre-configured
-in `pyproject.toml` and `Poetry.toml`. All you need to do is add your
-project-specific dependencies with
+Generated repositories use [pixi](https://pixi.sh/latest/) for dependency management and task execution.
+
+Install and lock dependencies with:
 
 ```bash
-poetry add <package>
+pixi install
 ```
 
-and then install the environment with
+Run project commands through pixi tasks:
 
 ```bash
-make install
+pixi run test
+pixi run type-check
+pixi run lint
 ```
 
-By default, the environment is created in a `.venv` folder, so you can
-easily start an interactive shell within the environment with
-`poetry shell`.
+To add Python package dependencies, edit `pixi.toml` under `[pypi-dependencies]`.
+
+The root `cookiecutter-hydro` repository itself remains Poetry-managed.

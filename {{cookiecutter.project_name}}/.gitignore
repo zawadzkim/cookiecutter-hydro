@@ -1,5 +1,11 @@
 docs/source
 
+# Project data folders
+input/raw/*
+!input/raw/.gitkeep
+input/processed/*
+!input/processed/.gitkeep
+
 # From https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore
 
 # Byte-compiled / optimized / DLL files
@@ -126,6 +132,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.pixi/
 env/
 venv/
 ENV/

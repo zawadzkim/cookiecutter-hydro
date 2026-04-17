@@ -22,6 +22,14 @@ For an explanation of the prompt arguments which you will need to answer, see
 
 After this step, you will have the structure of your project ready.
 
+Then install dependencies and run checks:
+
+```bash
+cd <project_name>
+pixi install
+pixi run all
+```
+
 ## Step 3: Set up your Github repository
 
 Create an empty [new repository](https://github.com/new) on Github. Give

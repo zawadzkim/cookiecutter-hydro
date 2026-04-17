@@ -1,6 +1,6 @@
 # Prompt arguments
 
-When running the command `ccp` a prompt will start which enables you to configure your repository. The
+When running the command `cchydro` a prompt will start which enables you to configure your repository. The
 prompt values and their explanation are as follows:
 
 ---
@@ -35,16 +35,14 @@ from <project_slug> import foo
 
 A short description of your project.
 
-**include_github_actions**
+**project_home**
 
-`"y"` or `"n"`. Adds a `.github` directory with various actions and
-workflows to setup the environment and run code formatting checks
-and unittests.
+`"new-directory"` or `"current-directory"`.
 
-**deptry**
+- `new-directory`: default cookiecutter behavior, create a new folder named `project_name`.
+- `current-directory`: move generated files into the directory where you ran `cchydro`.
 
-`"y"` or `"n"`. Adds [deptry](https://fpgmaas.github.io/deptry/)
-to the development dependencies of the project, and adds it to the `make check` command. `deptry` is a command line tool to check for issues with dependencies in a Python project, such as obsolete or missing dependencies.
+Use `current-directory` when you already created the repository folder and want to avoid nested project directories.
 
 **dockerfile**
 
@@ -52,7 +50,7 @@ to the development dependencies of the project, and adds it to the `make check` 
 
 **devcontainer**
 
-`"y"` or `"n"`. Adds a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) specification to the project along with pre-installed pre-commit hooks and VSCode python extension configuration.
+`"y"` or `"n"`. Adds a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) specification to the project and VSCode python extension configuration.
 
 **open_source_license**
 

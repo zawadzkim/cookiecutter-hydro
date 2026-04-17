@@ -1,0 +1,43 @@
+[project]
+name = "{{cookiecutter.project_slug}}"
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
+
+[dependencies]
+python = ">=3.11,<3.13"
+
+[activation.env]
+PYTHONPATH = "."
+
+[pypi-dependencies]
+pytest = ">=7.2,<9"
+mypy = ">=1.5,<2"
+ruff = ">=0.5,<1"
+{% if cookiecutter.dockerfile == 'y' -%}
+jupyter = ">=1.0,<2"
+{% endif -%}
+{% if cookiecutter.model == 'flopy' -%}
+flopy = ">=3.8,<4"
+{% elif cookiecutter.model == 'swap' -%}
+pyswap = "*"
+simplesoilprofile = "*"
+{% elif cookiecutter.model == 'pastas' -%}
+pastas = ">=1.7,<2"
+{% endif -%}
+{% if cookiecutter.gensor == 'y' -%}
+gensor = "*"
+{% endif -%}
+
+[tasks]
+test = "python -m pytest --doctest-modules tests"
+type-check = "mypy"
+lint = "ruff check src"
+{% if cookiecutter.dockerfile == 'y' -%}
+img = "docker build -t {{cookiecutter.project_slug}}-runner ."
+drun = { cmd = "docker run --rm -v \"$PWD\":/workspace -w /workspace -e PYTHONPATH=/workspace {{cookiecutter.project_slug}}-runner pixi run --manifest-path /opt/runner/pixi.toml python src/foo.py", depends-on = ["img"] }
+dnb = { cmd = "docker run --rm -v \"$PWD\":/workspace -w /workspace -e PYTHONPATH=/workspace {{cookiecutter.project_slug}}-runner pixi run --manifest-path /opt/runner/pixi.toml jupyter nbconvert --to notebook --execute notebooks/workflow.ipynb --output workflow-executed.ipynb", depends-on = ["img"] }
+dtest = { cmd = "docker run --rm -v \"$PWD\":/workspace -w /workspace -e PYTHONPATH=/workspace {{cookiecutter.project_slug}}-runner pixi run --manifest-path /opt/runner/pixi.toml test", depends-on = ["img"] }
+{% endif -%}
+
+[tasks.all]
+depends-on = ["lint", "type-check", "test"]

@@ -1,7 +1,7 @@
 site_name: cookiecutter-hydro
 repo_url: https://github.com/zawadzkim/cookiecutter-hydro
 site_url: https://zawadzkim.github.io/cookiecutter-hydro
-site_description: A cookiecutter template for structuring hydrological modelling projects using Python with Poetry as dependency management tool.
+site_description: A cookiecutter template for structuring hydrological modelling projects using Python with pixi task and dependency management.
 site_author: Mateusz Zawadzki
 edit_uri: edit/main/docs/
 repo_name: zawadzkim/cookiecutter-hydro
@@ -10,10 +10,9 @@ copyright: Maintained by <a href="https://zawadzkim.com">Mateusz</a>.
 nav:
   - Home: index.md
   - Features:
-      - CI/CD with Github Actions: features/cicd.md
       - Linting & code quality: features/linting.md
-      - Makefile: features/makefile.md
-      - Dependency management with Poetry: features/poetry.md
+      - Pixi tasks: features/makefile.md
+      - Dependency management: features/poetry.md
       - Testing with Pytest: features/pytest.md
       - Containerization with Docker: features/docker.md
       - Devcontainer with VSCode: features/devcontainer.md

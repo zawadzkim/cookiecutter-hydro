@@ -1,7 +1,9 @@
 #! /usr/bin/env bash
 
-# Install Dependencies
-poetry install --with dev
+# Install pixi
+curl -fsSL https://pixi.sh/install.sh | bash
+export PATH="$HOME/.pixi/bin:$PATH"
+echo 'export PATH="$HOME/.pixi/bin:$PATH"' >> "$HOME/.bashrc"
 
-# Install pre-commit hooks
-poetry run pre-commit install --install-hooks
+# Install dependencies
+pixi install
