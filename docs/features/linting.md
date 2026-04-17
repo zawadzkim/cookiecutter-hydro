@@ -36,4 +36,3 @@ max_line_length = 120
 indent_style = space
 indent_size = 4
 ```
-

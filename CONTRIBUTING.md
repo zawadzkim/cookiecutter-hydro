@@ -103,7 +103,7 @@ make test
 ```
 
 9. Reflect your changes in the documentation. Update relevant files in the `docs` directory, and potentially the `README`.
-    You can check the updated documentation with:
+   You can check the updated documentation with:
 
 ```bash
 make docs

@@ -19,9 +19,7 @@ def remove_dir(filepath: str) -> None:
 
 def move_project_to_parent() -> None:
     parent_directory = PROJECT_DIRECTORY.parent
-    conflicts = [
-        path.name for path in PROJECT_DIRECTORY.iterdir() if (parent_directory / path.name).exists()
-    ]
+    conflicts = [path.name for path in PROJECT_DIRECTORY.iterdir() if (parent_directory / path.name).exists()]
 
     if conflicts:
         print(

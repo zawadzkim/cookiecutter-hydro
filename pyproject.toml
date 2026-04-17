@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cookiecutter-hydro"
-version = "0.1.0"
+version = "0.1.1"
 description = "A cookiecutter template for scientific Python projects in the field of hydrology."
 authors = ["Mateusz Zawadzki <zawadzkimat@outlook.com>"]
 repository = "https://github.com/zawadzkim/cookiecutter-hydro"
