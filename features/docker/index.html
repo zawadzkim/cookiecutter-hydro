@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with Poetry as dependency management tool.">
+        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with pixi task and dependency management.">
       
       
         <meta name="author" content="Mateusz Zawadzki">
@@ -282,20 +282,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../cicd/" class="md-nav__link">
-        CI/CD with Github Actions
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../linting/" class="md-nav__link">
         Linting & code quality
       </a>
@@ -311,7 +297,7 @@
   
     <li class="md-nav__item">
       <a href="../makefile/" class="md-nav__link">
-        Makefile
+        Pixi tasks
       </a>
     </li>
   
@@ -325,7 +311,7 @@
   
     <li class="md-nav__item">
       <a href="../poetry/" class="md-nav__link">
-        Dependency management with Poetry
+        Dependency management
       </a>
     </li>
   
@@ -460,16 +446,32 @@
 
 <h1 id="containerization-with-docker">Containerization with Docker<a class="headerlink" href="#containerization-with-docker" title="Permanent link">&para;</a></h1>
 <p>If <code>dockerfile</code> is set to <code>"y"</code>, a simple <code>Dockerfile</code> is added to the
-repository. The Dockerfile installs poetry, sets up the environment and runs
+repository. The Dockerfile installs pixi, sets up the environment and runs
 <code>foo.py</code> when run.</p>
+<p>The container image now bakes only the runtime dependencies and expects project
+files (<code>src</code>, <code>tests</code>, <code>notebooks</code>, <code>input</code>) to be mounted as a volume at
+runtime. This better simulates running the same code/data snapshot in another
+environment (for example, HPC execution contexts).</p>
+<p>The generated <code>pixi.toml</code> also includes container workflow tasks to simulate
+running model workflows in a reproducible environment (for example, to mimic
+HPC-style execution):</p>
+<pre><code class="language-bash">pixi run img
+pixi run drun
+pixi run dnb
+pixi run dtest
+</code></pre>
+<p><code>dnb</code> executes <code>notebooks/workflow.ipynb</code> with
+<code>jupyter nbconvert --execute</code> and writes <code>workflow-executed.ipynb</code>.
+Adjust the notebook path to match your project notebooks.</p>
 <p>The docker image can be built with</p>
 <pre><code class="language-bash">docker build . -t my-docker-image
 </code></pre>
-<p>It can then be run in the background with</p>
-<pre><code class="language-bash">docker run -d my-docker-image
+<p>It can then be run against your project directory with a mounted volume, for
+example:</p>
+<pre><code class="language-bash">docker run --rm -v &quot;$PWD&quot;:/workspace -w /workspace my-docker-image
 </code></pre>
-<p>Or, run it interactive mode with</p>
-<pre><code>docker run --rm -it --entrypoint bash my-docker-image
+<p>Or run it in interactive mode with</p>
+<pre><code>docker run --rm -it -v &quot;$PWD&quot;:/workspace -w /workspace --entrypoint bash my-docker-image
 </code></pre>
 
 

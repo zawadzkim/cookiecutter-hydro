@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with Poetry as dependency management tool.">
+        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with pixi task and dependency management.">
       
       
         <meta name="author" content="Mateusz Zawadzki">
@@ -280,20 +280,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../features/cicd/" class="md-nav__link">
-        CI/CD with Github Actions
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../features/linting/" class="md-nav__link">
         Linting & code quality
       </a>
@@ -309,7 +295,7 @@
   
     <li class="md-nav__item">
       <a href="../features/makefile/" class="md-nav__link">
-        Makefile
+        Pixi tasks
       </a>
     </li>
   
@@ -323,7 +309,7 @@
   
     <li class="md-nav__item">
       <a href="../features/poetry/" class="md-nav__link">
-        Dependency management with Poetry
+        Dependency management
       </a>
     </li>
   
@@ -585,6 +571,11 @@ created.</p>
 <p>For an explanation of the prompt arguments which you will need to answer, see
 <a href="../prompt_arguments/">Prompt Arguments</a>.</p>
 <p>After this step, you will have the structure of your project ready.</p>
+<p>Then install dependencies and run checks:</p>
+<pre><code class="language-bash">cd &lt;project_name&gt;
+pixi install
+pixi run all
+</code></pre>
 <h2 id="step-3-set-up-your-github-repository">Step 3: Set up your Github repository<a class="headerlink" href="#step-3-set-up-your-github-repository" title="Permanent link">&para;</a></h2>
 <p>Create an empty <a href="https://github.com/new">new repository</a> on Github. Give
 it a name that only contains alphanumeric characters and optionally <code>-</code>.

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with Poetry as dependency management tool.">
+        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with pixi task and dependency management.">
       
       
         <meta name="author" content="Mateusz Zawadzki">
@@ -19,7 +19,7 @@
     
     
       
-        <title>Makefile - cookiecutter-hydro</title>
+        <title>Pixi tasks - cookiecutter-hydro</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#makefile" class="md-skip">
+        <a href="#task-runner-pixi" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Makefile
+              Pixi tasks
             
           </span>
         </div>
@@ -282,20 +282,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../cicd/" class="md-nav__link">
-        CI/CD with Github Actions
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../linting/" class="md-nav__link">
         Linting & code quality
       </a>
@@ -320,7 +306,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Makefile
+        Pixi tasks
       </a>
       
     </li>
@@ -335,7 +321,7 @@
   
     <li class="md-nav__item">
       <a href="../poetry/" class="md-nav__link">
-        Dependency management with Poetry
+        Dependency management
       </a>
     </li>
   
@@ -458,20 +444,21 @@
   </a>
 
 
-<h1 id="makefile">Makefile<a class="headerlink" href="#makefile" title="Permanent link">&para;</a></h1>
-<p>The generated repository will have a <code>Makefile</code> available. A list of all
-available commands that are available can be obtained by running
-<code>make help</code> in the terminal. Initially, if all features are selected, the following commands are
-available:</p>
-<pre><code>install              Install the poetry environment and install the pre-commit hooks
-check                Lint and check code by running ruff, mypy and deptry.
-test                 Test the code with pytest
-build                Build wheel file using poetry
-clean-build          clean build artifacts
-publish              publish a release to pypi.
-build-and-publish    Build and publish.
-docs-test            Test if documentation can be built without warnings or errors
-docs                 Build and serve the documentation
+<h1 id="task-runner-pixi">Task Runner (pixi)<a class="headerlink" href="#task-runner-pixi" title="Permanent link">&para;</a></h1>
+<p>Generated repositories use <code>pixi</code> tasks instead of a Makefile.</p>
+<p>Common tasks:</p>
+<pre><code class="language-bash">pixi install
+pixi run lint
+pixi run type-check
+pixi run test
+pixi run all
+</code></pre>
+<p>The <code>all</code> task is the quality gate and runs linting, typing, and tests.</p>
+<p>If <code>dockerfile</code> is enabled, additional container workflow tasks are available:</p>
+<pre><code class="language-bash">pixi run img
+pixi run drun
+pixi run dnb
+pixi run dtest
 </code></pre>
 
 
@@ -509,13 +496,13 @@ docs                 Build and serve the documentation
       
       
         
-        <a href="../poetry/" class="md-footer__link md-footer__link--next" aria-label="Next: Dependency management with Poetry" rel="next">
+        <a href="../poetry/" class="md-footer__link md-footer__link--next" aria-label="Next: Dependency management" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Dependency management with Poetry
+              Dependency management
             </div>
           </div>
           <div class="md-footer__button md-icon">

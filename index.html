@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with Poetry as dependency management tool.">
+        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with pixi task and dependency management.">
       
       
         <meta name="author" content="Mateusz Zawadzki">
@@ -331,20 +331,6 @@
   
   
     <li class="md-nav__item">
-      <a href="features/cicd/" class="md-nav__link">
-        CI/CD with Github Actions
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="features/linting/" class="md-nav__link">
         Linting & code quality
       </a>
@@ -360,7 +346,7 @@
   
     <li class="md-nav__item">
       <a href="features/makefile/" class="md-nav__link">
-        Makefile
+        Pixi tasks
       </a>
     </li>
   
@@ -374,7 +360,7 @@
   
     <li class="md-nav__item">
       <a href="features/poetry/" class="md-nav__link">
-        Dependency management with Poetry
+        Dependency management
       </a>
     </li>
   
@@ -526,20 +512,16 @@
 
   <h1>Home</h1>
 
-<p><a href="https://pypi.org/project/cookiecutter-poetry/"><img alt="Release" src="https://img.shields.io/github/v/release/fpgmaas/cookiecutter-poetry" /></a>
-<a href="https://github.com/fpgmaas/cookiecutter-poetry/actions/workflows/main.yml?query=branch%3Amain"><img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/fpgmaas/cookiecutter-poetry/main.yml?branch=main" /></a>
-<a href="https://pypi.org/project/cookiecutter-poetry/"><img alt="Supported Python versions" src="https://img.shields.io/pypi/pyversions/cookiecutter-poetry" /></a>
-<a href="https://img.shields.io/github/license/fpgmaas/cookiecutter-poetry"><img alt="License" src="https://img.shields.io/github/license/fpgmaas/cookiecutter-poetry" /></a></p>
+<p><a href="https://pypi.org/project/cookiecutter-hydro/"><img alt="Release" src="https://img.shields.io/github/v/release/zawadzkim/cookiecutter-hydro" /></a>
+<a href="https://pypi.org/project/cookiecutter-hydro/"><img alt="Supported Python versions" src="https://img.shields.io/pypi/pyversions/cookiecutter-hydro" /></a>
+<a href="https://img.shields.io/github/license/zawadzkim/cookiecutter-hydro"><img alt="License" src="https://img.shields.io/github/license/zawadzkim/cookiecutter-hydro" /></a></p>
 <h2 id="main-features">Main features<a class="headerlink" href="#main-features" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://python-poetry.org/">Poetry</a> for dependency management</li>
-<li><a href="https://github.com/features/actions">GitHub Actions</a></li>
-<li>Pre-commit hooks with <a href="https://pre-commit.com/">pre-commit</a></li>
-<li>Code quality with <a href="https://github.com/charliermarsh/ruff">ruff</a>, <a href="https://mypy.readthedocs.io/en/stable/">mypy</a>, <a href="https://github.com/fpgmaas/deptry/">deptry</a> and <a href="https://prettier.io/">prettier</a></li>
+<li><a href="https://pixi.sh/latest/">pixi</a> for dependency and task management in generated projects</li>
+<li>Code quality with <a href="https://github.com/astral-sh/ruff">ruff</a>, <a href="https://mypy.readthedocs.io/en/stable/">mypy</a> and <a href="https://prettier.io/">prettier</a></li>
 <li>Containerization with <a href="https://www.docker.com/">Docker</a></li>
 <li>Development environment with <a href="https://code.visualstudio.com/docs/devcontainers/containers">VSCode devcontainers</a></li>
 </ul>
-<p>An example of a repository generated with this package can be found <a href="https://github.com/fpgmaas/cookiecutter-poetry-example">here</a>.</p>
 <h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h2>
 <p>On your local machine, navigate to the directory in which you want to
 create a project directory, and run the following two commands:</p>
@@ -560,12 +542,13 @@ git commit -m &quot;Init commit&quot;
 git remote add origin git@github.com:&lt;github_author_handle&gt;/&lt;project_name&gt;.git
 git push -u origin main
 </code></pre>
-<p>Finally, install the environment and the pre-commit hooks with</p>
-<pre><code class="language-bash">make install
+<p>Finally, install dependencies and run checks with</p>
+<pre><code class="language-bash">pixi install
+pixi run all
 </code></pre>
 <p>You are now ready to start development on your project!</p>
 <h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h2>
-<p>This project is a fork of <a href="https://github.com/fpgmaas/cookiecutter-poetry-example">Cookiecutter Poetry</a> and is partly inspired by <a href="https://github.com/drivendataorg/cookiecutter-data-science">Cookiecutter Data Science</a> project, but is tailored for use in hydrological research.</p>
+<p>This project is inspired by Cookiecutter Poetry and Cookiecutter Data Science, and is tailored for hydrological research workflows.</p>
 
 
 
@@ -587,13 +570,13 @@ git push -u origin main
       
       
         
-        <a href="features/cicd/" class="md-footer__link md-footer__link--next" aria-label="Next: CI/CD with Github Actions" rel="next">
+        <a href="features/linting/" class="md-footer__link md-footer__link--next" aria-label="Next: Linting &amp; code quality" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              CI/CD with Github Actions
+              Linting & code quality
             </div>
           </div>
           <div class="md-footer__button md-icon">

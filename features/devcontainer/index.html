@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with Poetry as dependency management tool.">
+        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with pixi task and dependency management.">
       
       
         <meta name="author" content="Mateusz Zawadzki">
@@ -282,20 +282,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../cicd/" class="md-nav__link">
-        CI/CD with Github Actions
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../linting/" class="md-nav__link">
         Linting & code quality
       </a>
@@ -311,7 +297,7 @@
   
     <li class="md-nav__item">
       <a href="../makefile/" class="md-nav__link">
-        Makefile
+        Pixi tasks
       </a>
     </li>
   
@@ -325,7 +311,7 @@
   
     <li class="md-nav__item">
       <a href="../poetry/" class="md-nav__link">
-        Dependency management with Poetry
+        Dependency management
       </a>
     </li>
   
@@ -462,9 +448,9 @@
 <p>If <code>devcontainer</code> is set to <code>"y"</code> project uses the VSCode <a href="https://code.visualstudio.com/docs/devcontainers/containers">devcontainer</a>
 specification to create a reproducible development environment. The devcontainer
 is defined in the <code>.devcontainer</code> directory and pre-installs all dependencies
-from poetry required to develop, test and build the project.</p>
-<p>The devcontainer also installs the pre-commit hooks and configures the VSCode python
-extension to use the appropriate python interpretor and pytest paths.</p>
+from pixi required to develop, test and run the project.</p>
+<p>The devcontainer configures the VSCode python extension to use the
+appropriate python interpreter and pytest paths.</p>
 
 
 

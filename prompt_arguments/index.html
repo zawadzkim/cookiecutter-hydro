@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with Poetry as dependency management tool.">
+        <meta name="description" content="A cookiecutter template for structuring hydrological modelling projects using Python with pixi task and dependency management.">
       
       
         <meta name="author" content="Mateusz Zawadzki">
@@ -280,20 +280,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../features/cicd/" class="md-nav__link">
-        CI/CD with Github Actions
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../features/linting/" class="md-nav__link">
         Linting & code quality
       </a>
@@ -309,7 +295,7 @@
   
     <li class="md-nav__item">
       <a href="../features/makefile/" class="md-nav__link">
-        Makefile
+        Pixi tasks
       </a>
     </li>
   
@@ -323,7 +309,7 @@
   
     <li class="md-nav__item">
       <a href="../features/poetry/" class="md-nav__link">
-        Dependency management with Poetry
+        Dependency management
       </a>
     </li>
   
@@ -457,7 +443,7 @@
 
 
 <h1 id="prompt-arguments">Prompt arguments<a class="headerlink" href="#prompt-arguments" title="Permanent link">&para;</a></h1>
-<p>When running the command <code>ccp</code> a prompt will start which enables you to configure your repository. The
+<p>When running the command <code>cchydro</code> a prompt will start which enables you to configure your repository. The
 prompt values and their explanation are as follows:</p>
 <hr />
 <p><strong>author</strong></p>
@@ -476,17 +462,17 @@ replaced with <code>_</code>. This will be how you import your code later, e.g.<
 </code></pre>
 <p><strong>project_description</strong></p>
 <p>A short description of your project.</p>
-<p><strong>include_github_actions</strong></p>
-<p><code>"y"</code> or <code>"n"</code>. Adds a <code>.github</code> directory with various actions and
-workflows to setup the environment and run code formatting checks
-and unittests.</p>
-<p><strong>deptry</strong></p>
-<p><code>"y"</code> or <code>"n"</code>. Adds <a href="https://fpgmaas.github.io/deptry/">deptry</a>
-to the development dependencies of the project, and adds it to the <code>make check</code> command. <code>deptry</code> is a command line tool to check for issues with dependencies in a Python project, such as obsolete or missing dependencies.</p>
+<p><strong>project_home</strong></p>
+<p><code>"new-directory"</code> or <code>"current-directory"</code>.</p>
+<ul>
+<li><code>new-directory</code>: default cookiecutter behavior, create a new folder named <code>project_name</code>.</li>
+<li><code>current-directory</code>: move generated files into the directory where you ran <code>cchydro</code>.</li>
+</ul>
+<p>Use <code>current-directory</code> when you already created the repository folder and want to avoid nested project directories.</p>
 <p><strong>dockerfile</strong></p>
 <p><code>"y"</code> or <code>"n"</code>. Adds a simple <a href="https://docker.com">Dockerfile</a>.</p>
 <p><strong>devcontainer</strong></p>
-<p><code>"y"</code> or <code>"n"</code>. Adds a <a href="https://code.visualstudio.com/docs/devcontainers/containers">devcontainer</a> specification to the project along with pre-installed pre-commit hooks and VSCode python extension configuration.</p>
+<p><code>"y"</code> or <code>"n"</code>. Adds a <a href="https://code.visualstudio.com/docs/devcontainers/containers">devcontainer</a> specification to the project and VSCode python extension configuration.</p>
 <p><strong>open_source_license</strong></p>
 <p>Choose a <a href="https://choosealicense.com/">license</a>. Options:
 <code>["1. MIT License", "2. BSD license", "3. ISC license",  "4. Apache Software License 2.0", "5. GNU General Public License v3", "6. Not open source"]</code></p>
