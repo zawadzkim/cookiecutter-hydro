@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://zawadzkim.github.io/cookiecutter-hydro/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://zawadzkim.github.io/cookiecutter-hydro/prompt_arguments/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://zawadzkim.github.io/cookiecutter-hydro/tutorial/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://zawadzkim.github.io/cookiecutter-hydro/features/devcontainer/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://zawadzkim.github.io/cookiecutter-hydro/features/docker/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://zawadzkim.github.io/cookiecutter-hydro/features/linting/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://zawadzkim.github.io/cookiecutter-hydro/features/makefile/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://zawadzkim.github.io/cookiecutter-hydro/features/poetry/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://zawadzkim.github.io/cookiecutter-hydro/features/pytest/</loc>
-         <lastmod>2026-04-17</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
 </urlset>
