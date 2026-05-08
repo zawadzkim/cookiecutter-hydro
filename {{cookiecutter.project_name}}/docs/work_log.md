@@ -11,8 +11,8 @@ Document the first project setup and analysis plan.
 
 ### Data
 
-- Describe source datasets loaded from `input/raw`.
-- Record preprocessing outputs created in `input/processed`.
+- Describe source datasets loaded from `data/raw`.
+- Record preprocessing outputs created in `data/processed`.
 
 ### Methods
 

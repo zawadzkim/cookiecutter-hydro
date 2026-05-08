@@ -24,11 +24,13 @@ Rules:
 Create notebooks manually following this naming convention to keep chronology,
 authorship, and topic easy to scan in version control.
 
-## Imports from src
+## Imports
 
-The pixi environment sets `PYTHONPATH=.` so notebooks can import project code
-directly when launched from the project root, for example:
+The package is installed in editable mode (see `pyproject.toml` and
+`pixi.toml`), so notebooks can import project code regardless of the
+kernel's working directory:
 
 ```python
-from src.foo import foo
+from {{cookiecutter.project_slug}}.paths import processed, output
+from {{cookiecutter.project_slug}} import some_module
 ```

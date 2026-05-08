@@ -16,17 +16,17 @@ pixi run all
 
 ## Project layout
 
-- `input/raw`: raw, unprocessed data files (gitignored)
-- `input/processed`: transformed datasets ready for analysis (gitignored)
+- `data/raw`: raw, unprocessed data files (gitignored)
+- `data/processed`: transformed datasets ready for analysis (gitignored)
 - `notebooks`: exploratory notebooks
 - `output`: generated artifacts and figures
 - `docs`: project notes and methodological documentation
-- `src`: model and workflow code
+- `src/{{cookiecutter.project_slug}}`: project package (editable-installed)
 
 If you work with multiple model sources in one project, create dedicated
-subdirectories under `src` (for example
-`src/modflow_local`, `src/pastas_runs`, `src/custom_model`) so code and
-assumptions stay separated.
+submodules under `src/{{cookiecutter.project_slug}}/` (for example
+`modflow_local`, `pastas_runs`, `custom_model`) so code and assumptions
+stay separated.
 
 ## Testing
 

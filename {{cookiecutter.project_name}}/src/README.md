@@ -2,15 +2,20 @@
 
 ## Purpose
 
-This directory contains modeling and analysis code used by scripts and notebooks.
+This directory contains the project package — modeling and analysis code
+used by scripts and notebooks.
 
 ## Layout
 
-- foo.py: starter utility/example module
+The package lives at `src/{{cookiecutter.project_slug}}/` and is installed in
+editable mode by pixi (see `pyproject.toml` and `pixi.toml`).
 
-If your project combines multiple model sources, create one directory per
-source under `src` (for example `modflow_local`, `pastas_runs`, or
-`surface_water_model`) and keep each workflow isolated.
+- `paths.py`: `pathlib.Path` handles for `data/raw`, `data/processed`, and
+  `output`.
+
+If your project combines multiple model sources, add submodules under
+`src/{{cookiecutter.project_slug}}/` (for example `modflow_local`,
+`pastas_runs`, `surface_water_model`) and keep each workflow isolated.
 
 ## Conventions
 
@@ -20,8 +25,9 @@ source under `src` (for example `modflow_local`, `pastas_runs`, or
 
 ## Usage
 
-Import source code from notebooks or scripts:
+Because the package is editable-installed, imports work from anywhere:
 
 ```python
-from src.foo import foo
+from {{cookiecutter.project_slug}}.paths import processed
+from {{cookiecutter.project_slug}} import some_module
 ```

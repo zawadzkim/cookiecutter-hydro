@@ -22,4 +22,4 @@ RUN pixi install
 WORKDIR /workspace
 VOLUME ["/workspace"]
 
-CMD ["pixi", "run", "--manifest-path", "/opt/runner/pixi.toml", "python", "src/foo.py"]
+CMD ["pixi", "run", "--manifest-path", "/opt/runner/pixi.toml", "python", "-c", "import {{cookiecutter.project_slug}}; print('package loaded')"]

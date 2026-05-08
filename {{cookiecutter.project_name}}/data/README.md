@@ -1,4 +1,4 @@
-# Input Data
+# Data
 
 ## Purpose
 
@@ -24,10 +24,11 @@ Both `raw` and `processed` are gitignored by default in this template.
 
 ## Usage
 
-`raw` and `processed` are exposed as `pathlib.Path` objects:
+`raw` and `processed` are exposed as `pathlib.Path` objects via the
+project package:
 
 ```python
-from input import processed
+from {{cookiecutter.project_slug}}.paths import processed
 
 csv_file = processed / "heads-monthly-v2026-04.csv"
 ```
