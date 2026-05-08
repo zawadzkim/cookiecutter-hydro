@@ -21,3 +21,13 @@ Good patterns include date stamps, semantic versions, resolution/CRS tags,
 and short processing qualifiers.
 
 Both `raw` and `processed` are gitignored by default in this template.
+
+## Usage
+
+`raw` and `processed` are exposed as `pathlib.Path` objects:
+
+```python
+from input import processed
+
+csv_file = processed / "heads-monthly-v2026-04.csv"
+```
