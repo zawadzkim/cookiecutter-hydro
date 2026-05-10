@@ -1,36 +1,36 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro log --all --oneline -- \"{{cookiecutter.project_name}}/input/__init__.py\" \"{{cookiecutter.project_name}}/output/__init__.py\")",
-      "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro log --all --oneline --diff-filter=D --name-only)",
-      "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro show 41180fe^:\"{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/output/__init__.py\")",
-      "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro show 41180fe^:\"{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/data/__init__.py\")",
-      "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro show 41180fe^:\"{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/data/observations/__init__.py\")",
-      "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro show 41180fe^:\"{{cookiecutter.project_name}}/pyproject.toml\")",
-      "Bash(PYTHONPATH=. python -c ' *)",
-      "Bash(PYTHONPATH=. python3 -c ' *)",
-      "Bash(PIXI_PROJECT_ROOT='/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}' bash -c 'source ../scripts/activate.sh && echo \"PYTHONPATH=$PYTHONPATH\" && python3 -c \" *)",
-      "Bash(pixi --version)",
-      "Bash(rm -rf /tmp/tmp.kIcK4VBiwK && ls \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}\")",
-      "Read(//home/zawadzkim/Code/kinrooi-gwlevels/**)",
-      "Read(//home/zawadzkim/Code/**)",
-      "Bash(rm \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/src/foo.py\" \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/src/__init__.py\" \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/src/.gitkeep\" \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/tests/test_foo.py\" \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/output/__init__.py\" && echo done)",
-      "Bash(git add *)",
-      "Bash(git commit *)",
-      "Bash(cookiecutter --version)",
-      "Bash(ls /tmp/tmp.IIUjuDdVGc)",
-      "Read(//tmp/tmp.IIUjuDdVGc/**)",
-      "Bash(pixi install *)",
-      "Bash(pixi run python -c ' *)",
-      "Read(//tmp/**)",
-      "Bash(pixi run --manifest-path /tmp/tmp.IIUjuDdVGc/verify-template/pixi.toml python -c ' *)",
-      "Bash(pixi run *)",
-      "Bash(rm -rf /tmp/tmp.IIUjuDdVGc && git log --oneline -7 && echo --- && git status --short)"
-    ],
-    "additionalDirectories": [
-      "/tmp/tmp.kIcK4VBiwK",
-      "/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/src",
-      "/tmp/tmp.IIUjuDdVGc"
-    ]
-  }
+    "permissions": {
+        "allow": [
+            "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro log --all --oneline -- \"{{cookiecutter.project_name}}/input/__init__.py\" \"{{cookiecutter.project_name}}/output/__init__.py\")",
+            "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro log --all --oneline --diff-filter=D --name-only)",
+            "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro show 41180fe^:\"{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/output/__init__.py\")",
+            "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro show 41180fe^:\"{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/data/__init__.py\")",
+            "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro show 41180fe^:\"{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/data/observations/__init__.py\")",
+            "Bash(git -C /home/zawadzkim/Code/cookiecutter-hydro show 41180fe^:\"{{cookiecutter.project_name}}/pyproject.toml\")",
+            "Bash(PYTHONPATH=. python -c ' *)",
+            "Bash(PYTHONPATH=. python3 -c ' *)",
+            "Bash(PIXI_PROJECT_ROOT='/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}' bash -c 'source ../scripts/activate.sh && echo \"PYTHONPATH=$PYTHONPATH\" && python3 -c \" *)",
+            "Bash(pixi --version)",
+            "Bash(rm -rf /tmp/tmp.kIcK4VBiwK && ls \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}\")",
+            "Read(//home/zawadzkim/Code/kinrooi-gwlevels/**)",
+            "Read(//home/zawadzkim/Code/**)",
+            "Bash(rm \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/src/foo.py\" \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/src/__init__.py\" \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/src/.gitkeep\" \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/tests/test_foo.py\" \"/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/output/__init__.py\" && echo done)",
+            "Bash(git add *)",
+            "Bash(git commit *)",
+            "Bash(cookiecutter --version)",
+            "Bash(ls /tmp/tmp.IIUjuDdVGc)",
+            "Read(//tmp/tmp.IIUjuDdVGc/**)",
+            "Bash(pixi install *)",
+            "Bash(pixi run python -c ' *)",
+            "Read(//tmp/**)",
+            "Bash(pixi run --manifest-path /tmp/tmp.IIUjuDdVGc/verify-template/pixi.toml python -c ' *)",
+            "Bash(pixi run *)",
+            "Bash(rm -rf /tmp/tmp.IIUjuDdVGc && git log --oneline -7 && echo --- && git status --short)"
+        ],
+        "additionalDirectories": [
+            "/tmp/tmp.kIcK4VBiwK",
+            "/home/zawadzkim/Code/cookiecutter-hydro/{{cookiecutter.project_name}}/src",
+            "/tmp/tmp.IIUjuDdVGc"
+        ]
+    }
 }

@@ -80,15 +80,31 @@ def test_not_devcontainer(cookies, tmp_path):
         assert not os.path.isfile(f"{result.project_path}/.devcontainer/postCreateCommand.sh")
 
 
-def test_dockerfile(cookies, tmp_path):
+def test_jupyter(cookies, tmp_path):
+    """Test that notebooks/ dir exists and pixi.toml includes jupyter/ipykernel when jupyter=y"""
     with run_within_dir(tmp_path):
-        result = cookies.bake(extra_context={"dockerfile": "y"})
+        result = cookies.bake(extra_context={"jupyter": "y"})
         assert result.exit_code == 0
-        assert os.path.isfile(f"{result.project_path}/Dockerfile")
+        assert os.path.isdir(f"{result.project_path}/notebooks")
+        pixi_toml = (result.project_path / "pixi.toml").read_text()
+        assert "jupyter" in pixi_toml
+        assert "ipykernel" in pixi_toml
 
 
-def test_not_dockerfile(cookies, tmp_path):
+def test_not_jupyter(cookies, tmp_path):
+    """Test that notebooks/ dir is absent and pixi.toml excludes jupyter/ipykernel when jupyter=n"""
     with run_within_dir(tmp_path):
-        result = cookies.bake(extra_context={"dockerfile": "n"})
+        result = cookies.bake(extra_context={"jupyter": "n"})
+        assert result.exit_code == 0
+        assert not os.path.isdir(f"{result.project_path}/notebooks")
+        pixi_toml = (result.project_path / "pixi.toml").read_text()
+        assert "jupyter" not in pixi_toml
+        assert "ipykernel" not in pixi_toml
+
+
+def test_no_dockerfile(cookies, tmp_path):
+    """Test that Dockerfile is never generated (option removed)"""
+    with run_within_dir(tmp_path):
+        result = cookies.bake()
         assert result.exit_code == 0
         assert not os.path.isfile(f"{result.project_path}/Dockerfile")

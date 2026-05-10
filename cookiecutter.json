@@ -6,8 +6,8 @@
     "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
     "project_description": "This is a template repository for Python projects that use pixi for dependency management.",
     "project_home": ["new-directory", "current-directory"],
-    "dockerfile": ["y", "n"],
     "devcontainer": ["y", "n"],
+    "jupyter": ["y", "n"],
     "model": ["flopy", "swap", "pastas", "None"],
     "gensor": ["y", "n"],
     "open_source_license": [

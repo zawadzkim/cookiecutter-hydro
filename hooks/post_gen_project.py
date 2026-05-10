@@ -36,11 +36,11 @@ def move_project_to_parent() -> None:
 
 
 if __name__ == "__main__":
-    if "{{cookiecutter.dockerfile}}" != "y":
-        remove_file("Dockerfile")
-
     if "{{cookiecutter.devcontainer}}" != "y":
         remove_dir(".devcontainer")
+
+    if "{{cookiecutter.jupyter}}" != "y":
+        remove_dir("notebooks")
 
     if "{{cookiecutter.project_home}}" == "current-directory":
         move_project_to_parent()
