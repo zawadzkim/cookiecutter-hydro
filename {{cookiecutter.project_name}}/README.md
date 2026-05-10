@@ -21,20 +21,33 @@ pixi run all
 - `notebooks`: exploratory notebooks
 - `output`: generated artifacts and figures
 - `docs`: project notes and methodological documentation
-- `src/{{cookiecutter.project_slug}}`: project package (editable-installed)
+- `{{cookiecutter.project_slug}}/`: project package (editable-installed). Exposes
+  `ROOT` (a `pathlib.Path` to the repo root) via `paths.py`. Add submodules
+  here for reusable code (e.g. `io.py`, `models/`, `viz.py`).
+- `{{cookiecutter.project_slug}}/scripts/`: utility functions and small task
+  scripts, importable from notebooks and other code.
 
 If you work with multiple model sources in one project, create dedicated
-submodules under `src/{{cookiecutter.project_slug}}/` (for example
+submodules under `{{cookiecutter.project_slug}}/` (for example
 `modflow_local`, `pastas_runs`, `custom_model`) so code and assumptions
 stay separated.
 
+## Paths in notebooks and scripts
+
+Because the package is editable-installed, you can compose paths relative
+to the repo root regardless of cwd:
+
+```python
+from {{cookiecutter.project_slug}}.paths import ROOT
+
+raw = ROOT / "data" / "raw"
+processed = ROOT / "data" / "processed"
+output = ROOT / "output"
+```
+
 ## Testing
 
-This template includes one example pytest (`tests/test_foo.py`) for the starter
-`foo` function. Use it as a pattern when adding tests for your own models,
-data transforms, and calibration workflows.
-
-Run tests with:
+Add tests under `tests/` and run them with:
 
 ```bash
 pixi run test
