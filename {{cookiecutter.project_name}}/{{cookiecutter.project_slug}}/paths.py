@@ -23,4 +23,8 @@ def _find_root(start: Path) -> Path:
 
 ROOT: Path = _find_root(Path(__file__).resolve())
 
-__all__ = ["ROOT"]
+data: Path = ROOT / "data"
+processed: Path = ROOT / "data" / "processed"
+output: Path = ROOT / "output"
+
+__all__ = ["ROOT", "processed", "output"]
